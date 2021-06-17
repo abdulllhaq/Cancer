@@ -193,7 +193,7 @@ st.pyplot(fig_Concavepoints)
 
 st.header('Symmetry Value Graph (Yours vs Others)')
 fig_Symmetry = plt.figure()
-ax7 = sns.scatterplot(x = 'Age', y = 'Symmetry, data = df, hue = 'Outcome', palette='Reds')
+ax7 = sns.scatterplot(x = 'Age', y = 'Symmetry', data = df, hue = 'Outcome', palette='Reds')
 ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Symmetry'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,110,10))
