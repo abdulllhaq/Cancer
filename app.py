@@ -15,10 +15,13 @@ from PIL import Image
 
 #App description
 st.markdown('''
-# Cancer Detector 
-This app detects if you have diabetes based on Machine Learning!
+#  Breast Cancer Detector 
+This app detects if you have Breast Cancer based on Machine Learning!
 - App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
-- Dataset resource: Pima Indian Datset (United States National Institutes of Health). 
+- Dataset Creators: 
+- Dr. William H. Wolberg, General Surgery Dept. University of Wisconsin, Clinical Sciences Center Madison, WI 53792
+- W. Nick Street, Computer Sciences Dept. University of Wisconsin, 1210 West Dayton St., Madison, WI 53706
+- Olvi L. Mangasarian, Computer Sciences Dept. University of Wisconsin, 1210 West Dayton St., Madison, WI 53706
 - Note: User inputs are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of the parameters can be changed from the sidebar.  
 ''')
 st.write('---')
@@ -216,24 +219,24 @@ st.pyplot(fig_FractalDimension)
 st.subheader('Your Report: ')
 output=''
 if user_result[0]==0:
-  output = 'Congratulations, you do not have cancer'
+  output = 'Congratulations, you do not have  Breast Cancer'
 else:
-  output = 'Unfortunately, you have cancer'
+  output = 'Unfortunately, you do have Breast Cancer'
 st.title(output)
 
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
 
 #Most important for users
-st.subheader('Lets raise awareness for diabetes and show our support for diabetes awareness and help many patients around the world.')
-st.write("World Diabetes Day: 14 November")
+st.subheader('Lets raise awareness for Breast Cancer and show our support for cancer awareness and help many patients around the world.')
+st.write("Breast Cancer Awareness Month: October")
 
-st.sidebar.subheader("""An article about this app: https://proskillocity.blogspot.com/2021/04/official-launch-of-our-first-web-app.html""")
-st.write("Dataset citation : Smith, J.W., Everhart, J.E., Dickson, W.C., Knowler, W.C., & Johannes, R.S. (1988).  Using the ADAP learning algorithm to forecast the onset of diabetes mellitus. In Proceedings of the Symposium on Computer Applications and Medical Care (pp. 261--265). IEEE Computer Society Press.")
-st.write("Original owners of the dataset: Original owners: National Institute of Diabetes and Digestive and Kidney Diseases (b) Donor of database: Vincent Sigillito (vgs@aplcen.apl.jhu.edu) Research Center, RMI Group Leader Applied Physics Laboratory The Johns Hopkins University Johns Hopkins Road Laurel, MD 20707 (301) 953-6231 © Date received: 9 May 1990")
-st.write("Dataset License: Open Data Commons Public Domain Dedication and License (PDDL)")
+#st.sidebar.subheader("""An article about this app: https://proskillocity.blogspot.com/2021/04/official-launch-of-our-first-web-app.html""")
+st.write("Dataset citation : W.N. Street, W.H. Wolberg and O.L. Mangasarian. Nuclear feature extraction for breast tumor diagnosis. IS&T/SPIE 1993 International Symposium on Electronic Imaging: Science and Technology, volume 1905, pages 861-870, San Jose, CA, 1993. O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and prognosis via linear programming. Operations Research, 43(4), pages 570-577, July-August 1995.
+#st.write("Original owners of the dataset: Original owners: National Institute of Diabetes and Digestive and Kidney Diseases (b) Donor of database: Vincent Sigillito (vgs@aplcen.apl.jhu.edu) Research Center, RMI Group Leader Applied Physics Laboratory The Johns Hopkins University Johns Hopkins Road Laurel, MD 20707 (301) 953-6231 © Date received: 9 May 1990")
+st.write("Dataset License: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)")
 
-st.write("Disclaimer: This is just a learning project based on one particular dataset so please do not depend on it to actually know if you have diabetes or not. It might still be a false positive or false negative. A doctor is still the best fit for the determination of such diseases.")
+st.write("Disclaimer: This is just a learning project based on one particular dataset so please do not depend on it to actually know if you have breast cancer or not. It might still be a false positive or false negative. A doctor is still the best fit for the determination of such diseases.")
 image = Image.open('killocity (3).png')
 
 st.image(image, use_column_width=True)
