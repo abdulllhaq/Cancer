@@ -56,15 +56,19 @@ def user_report():
   
   
   user_report_data = {
-      'Age':glucose,
-      'insulin':insulin,
-      'bp':bp,
-      'bmi':bmi,
-      'dpf':dpf,
-      'age':age,
-      'pregnancies':pregnancies,
-      'skinthickness':skinthickness,
-         
+      'Age':Age,
+      'Radius':Radius,
+      'Texture':Texture,
+      'Perimeter':Perimeter,
+      'Area':Area,
+      'Smoothness':Smoothness,
+      'Compactness':Compactness,
+      'Concavity':Concavity,
+      'Concave_points':Concave_points,
+      'Symmetry':Symmetry,
+      'Fractal_Dimension':Fractal_Dimension,
+      
+        
   }
   report_data = pd.DataFrame(user_report_data, index=[0])
   return report_data
@@ -98,80 +102,114 @@ else:
   color = 'red'
 
 #Good old glucose
-st.header('Glucose Value Graph (Yours vs Others)')
-fig_glucose = plt.figure()
-ax3 = sns.scatterplot(x = 'Age', y = 'Glucose', data = df, hue = 'Outcome' , palette='Purples')
-ax4 = sns.scatterplot(x = user_data['age'], y = user_data['glucose'], s = 150, color = color)
+st.header('Radius Value Graph (Yours vs Others)')
+fig_Radius = plt.figure()
+ax3 = sns.scatterplot(x = 'Age', y = 'Radius', data = df, hue = 'Outcome' , palette='Purples')
+ax4 = sns.scatterplot(x = user_data['Age'], y = user_data['Radius'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,250,20))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_glucose)
+st.pyplot(fig_Radius)
 
 
 #Insulin
-st.header('Insulin Value Graph (Yours vs Others)')
-fig_insulin = plt.figure()
-ax9 = sns.scatterplot(x = 'Age', y = 'Insulin', data = df, hue = 'Outcome', palette='rainbow')
-ax10 = sns.scatterplot(x = user_data['age'], y = user_data['insulin'], s = 150, color = color)
+st.header('Texture Value Graph (Yours vs Others)')
+fig_Texture = plt.figure()
+ax9 = sns.scatterplot(x = 'Age', y = 'Texture', data = df, hue = 'Outcome', palette='rainbow')
+ax10 = sns.scatterplot(x = user_data['Age'], y = user_data['Texture'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,900,50))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_insulin)
+st.pyplot(fig_Texture)
 
 
 #Famous saying BP
-st.header('Blood Pressure Value Graph (Yours vs Others)')
-fig_bp = plt.figure()
-ax5 = sns.scatterplot(x = 'Age', y = 'BloodPressure', data = df, hue = 'Outcome', palette='Blues')
-ax6 = sns.scatterplot(x = user_data['age'], y = user_data['bp'], s = 150, color = color)
+st.header('Perimeter Value Graph (Yours vs Others)')
+fig_Perimeter = plt.figure()
+ax5 = sns.scatterplot(x = 'Age', y = 'Perimeter', data = df, hue = 'Outcome', palette='Blues')
+ax6 = sns.scatterplot(x = user_data['Age'], y = user_data['Perimeter'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,320,20))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_bp)
+st.pyplot(fig_Perimeter)
 
 
 #Did'nt even know this before nutrition training 
-st.header('BMI Value Graph (Yours vs Others)')
-fig_bmi = plt.figure()
-ax11 = sns.scatterplot(x = 'Age', y = 'BMI', data = df, hue = 'Outcome', palette='Greens')
-ax12 = sns.scatterplot(x = user_data['age'], y = user_data['bmi'], s = 150, color = color)
+st.header('Area Value Graph (Yours vs Others)')
+fig_Area = plt.figure()
+ax11 = sns.scatterplot(x = 'Age', y = 'Area', data = df, hue = 'Outcome', palette='Greens')
+ax12 = sns.scatterplot(x = user_data['Age'], y = user_data['Area'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,75,5))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_bmi)
+st.pyplot(fig_Area)
 
 
 #Something new, cool
-st.header('DPF Value Graph (Yours vs Others)')
-fig_dpf = plt.figure()
-ax13 = sns.scatterplot(x = 'Age', y = 'DiabetesPedigreeFunction', data = df, hue = 'Outcome', palette='rocket')
-ax14 = sns.scatterplot(x = user_data['age'], y = user_data['dpf'], s = 150, color = color)
+st.header('Smoothness Value Graph (Yours vs Others)')
+fig_Smoothness = plt.figure()
+ax13 = sns.scatterplot(x = 'Age', y = 'Smoothness', data = df, hue = 'Outcome', palette='rocket')
+ax14 = sns.scatterplot(x = user_data['Age'], y = user_data['Smoothness'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,3.2,0.2))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_dpf)
+st.pyplot(fig_Smoothness)
 
 
 #Don't even know how thats related to diabetes.The dataset was females only though
-st.header('Pregnancy count Graph (Yours vs Others)')
-fig_pregn = plt.figure()
-ax1 = sns.scatterplot(x = 'Age', y = 'Pregnancies', data = df, hue = 'Outcome', palette = 'magma')
-ax2 = sns.scatterplot(x = user_data['age'], y = user_data['pregnancies'], s = 150, color = color)
+st.header('Compactness count Graph (Yours vs Others)')
+fig_Compactness = plt.figure()
+ax1 = sns.scatterplot(x = 'Age', y = 'Compactness', data = df, hue = 'Outcome', palette = 'magma')
+ax2 = sns.scatterplot(x = user_data['Age'], y = user_data['Compactness'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,20,2))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_pregn)
+st.pyplot(fig_Compactness)
 
 
 #Wonder how people measure that 
-st.header('Skin Thickness Value Graph (Yours vs Others)')
-fig_st = plt.figure()
-ax7 = sns.scatterplot(x = 'Age', y = 'SkinThickness', data = df, hue = 'Outcome', palette='Reds')
-ax8 = sns.scatterplot(x = user_data['age'], y = user_data['skinthickness'], s = 150, color = color)
+st.header('Concavity Value Graph (Yours vs Others)')
+fig_Concavity = plt.figure()
+ax7 = sns.scatterplot(x = 'Age', y = 'Concavity', data = df, hue = 'Outcome', palette='Reds')
+ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Concavity'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
 plt.yticks(np.arange(0,110,10))
 plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_st)
+st.pyplot(fig_Concavity)
+
+
+
+st.header('Concave points Value Graph (Yours vs Others)')
+fig_Concavepoints = plt.figure()
+ax7 = sns.scatterplot(x = 'Age', y = 'Concave points', data = df, hue = 'Outcome', palette='Reds')
+ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Concave points'], s = 150, color = color)
+plt.xticks(np.arange(0,100,5))
+plt.yticks(np.arange(0,110,10))
+plt.title('0 - Healthy & 1 - Unhealthy')
+st.pyplot(fig_Concavepoints)
+
+
+
+
+st.header('Symmetry Value Graph (Yours vs Others)')
+fig_Symmetry = plt.figure()
+ax7 = sns.scatterplot(x = 'Age', y = 'Symmetry, data = df, hue = 'Outcome', palette='Reds')
+ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Symmetry'], s = 150, color = color)
+plt.xticks(np.arange(0,100,5))
+plt.yticks(np.arange(0,110,10))
+plt.title('0 - Healthy & 1 - Unhealthy')
+st.pyplot(fig_Symmetry)
+
+
+st.header('Fractal Dimension Value Graph (Yours vs Others)')
+fig_FractalDimension = plt.figure()
+ax7 = sns.scatterplot(x = 'Age', y = 'Fractal Dimension', data = df, hue = 'Outcome', palette='Reds')
+ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Fractal Dimension'], s = 150, color = color)
+plt.xticks(np.arange(0,100,5))
+plt.yticks(np.arange(0,110,10))
+plt.title('0 - Healthy & 1 - Unhealthy')
+st.pyplot(fig_FractalDimension)
+
 
 
 #Finally!
