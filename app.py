@@ -56,7 +56,7 @@ def user_report():
   
   
   user_report_data = {
-      'glucose':glucose,
+      'Age':glucose,
       'insulin':insulin,
       'bp':bp,
       'bmi':bmi,
