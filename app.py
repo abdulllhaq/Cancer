@@ -216,9 +216,9 @@ st.pyplot(fig_FractalDimension)
 st.subheader('Your Report: ')
 output=''
 if user_result[0]==0:
-  output = 'Congratulations, you are not Diabetic'
+  output = 'Congratulations, you do not have cancer'
 else:
-  output = 'Unfortunately, you are Diabetic'
+  output = 'Unfortunately, you have cancer'
 st.title(output)
 
 #Most important for users
