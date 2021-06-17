@@ -49,7 +49,7 @@ def user_report():
   Concavity = st.sidebar.slider('Concavity', 0.0,0.5, 0.1 )
   Concave_points = st.sidebar.slider('Concave points', 0.0,0.25, 0.05 )
   Symmetry = st.sidebar.slider('Symmetry', 0.0,0.4, 0.2 )
-  Fractal_Dimension = st.sidebar.slider('Fractal Dimension', 0.0,0.01, 0.06 )
+  Fractal_Dimension = st.sidebar.slider('Fractal Dimension', 0.0,0.1, 0.06 )
   
   
   
@@ -206,7 +206,7 @@ fig_FractalDimension = plt.figure()
 ax7 = sns.scatterplot(x = 'Age', y = 'Fractal Dimension', data = df, hue = 'Outcome', palette='Reds')
 ax8 = sns.scatterplot(x = user_data['Age'], y = user_data['Fractal_Dimension'], s = 150, color = color)
 plt.xticks(np.arange(0,100,5))
-plt.yticks(np.arange(0.0,0.01,0.0005))
+plt.yticks(np.arange(0.0,0.1,0.005))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_FractalDimension)
 
