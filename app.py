@@ -221,6 +221,9 @@ else:
   output = 'Unfortunately, you have cancer'
 st.title(output)
 
+st.subheader('Accuracy: ')
+st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+
 #Most important for users
 st.subheader('Lets raise awareness for diabetes and show our support for diabetes awareness and help many patients around the world.')
 st.write("World Diabetes Day: 14 November")
