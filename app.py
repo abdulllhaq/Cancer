@@ -15,7 +15,7 @@ from PIL import Image
 
 #App description
 st.markdown('''
-# Diabetes Detector 
+# Cancer Detector 
 This app detects if you have diabetes based on Machine Learning!
 - App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
 - Dataset resource: Pima Indian Datset (United States National Institutes of Health). 
@@ -23,7 +23,7 @@ This app detects if you have diabetes based on Machine Learning!
 ''')
 st.write('---')
 
-df = pd.read_csv(r'diabetes.csv')
+df = pd.read_csv(r'data.csv')
 
 #titles
 st.sidebar.header('Patient Data')
@@ -39,15 +39,22 @@ x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random
 
 #User reports
 def user_report():
-  glucose = st.sidebar.slider('Glucose', 0,250, 120 )
-  insulin = st.sidebar.slider('Insulin', 0,850, 90 )
-  bp = st.sidebar.slider('Blood Pressure', 0,300, 85 )
-  bmi = st.sidebar.slider('BMI', 0,70, 22 )
-  dpf = st.sidebar.slider('Diabetes Pedigree Function', 0.0,3.0, 0.8 )
-  age = st.sidebar.slider('Age', 21,120, 55 )
-  pregnancies = st.sidebar.slider('Pregnancies', 0,10, 1 )
-  skinthickness = st.sidebar.slider('Skin Thickness', 0,100, 35 )
-
+  Age = st.sidebar.slider('Age', 0,100, 54)
+  Radius = st.sidebar.slider('Radius', 0,250, 120 )
+  Texture = st.sidebar.slider('Texture', 0,850, 90 )
+  Perimeter = st.sidebar.slider('Perimeter', 0,300, 85 )
+  Area = st.sidebar.slider('Area', 0,70, 22 )
+  Smoothness = st.sidebar.slider('Smoothness', 0.0,3.0, 0.8 )
+  Compactness = st.sidebar.slider('Compactness', 21,120, 55 )
+  Concavity = st.sidebar.slider('Concavity', 0,10, 1 )
+  Concave_points = st.sidebar.slider('Concave points', 0,100, 35 )
+  Symmetry = st.sidebar.slider('Symmetry', 0,100, 35 )
+  Fractal_Dimension = st.sidebar.slider('Fractal Dimension', 0,100, 35 )
+  
+  
+  
+  
+  
   user_report_data = {
       'glucose':glucose,
       'insulin':insulin,
