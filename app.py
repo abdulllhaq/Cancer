@@ -17,7 +17,7 @@ from PIL import Image
 st.markdown('''
 #  Breast Cancer Detector 
 This app detects if you have Breast Cancer based on Machine Learning!
-- App built by Pranav Sawant and Anshuman Shukla of Team Skillocity.
+- App built by Anshuman Shukla and Pranav Sawant of Team Skillocity.
 - Dataset Creators: 
 - Dr. William H. Wolberg, General Surgery Dept. University of Wisconsin, Clinical Sciences Center Madison, WI 53792
 - W. Nick Street, Computer Sciences Dept. University of Wisconsin, 1210 West Dayton St., Madison, WI 53706
