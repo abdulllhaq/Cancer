@@ -120,7 +120,7 @@ st.pyplot(plt) # display plot in streamlit
 
 # Footer
 st.write('App built by Abdul Haq.')
-st.write('Dataset citation : W.N. Street, W.H. Wolberg and O.L. Mangasarian. Nuclear feature extraction for breast tumor diagnosis. IS&T/SPIE 1993 International Symposium on Electronic Imaging: Science and Technology, volume 1905, pages 861-870, San Jose, CA, 1993. O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and prognosis via linear programming. Operations Research, 43(4), pages 570-577, July-August 1995.")
+st.write("Dataset citation : W.N. Street, W.H. Wolberg and O.L. Mangasarian. Nuclear feature extraction for breast tumor diagnosis. IS&T/SPIE 1993 International Symposium on Electronic Imaging: Science and Technology, volume 1905, pages 861-870, San Jose, CA, 1993. O.L. Mangasarian, W.N. Street and W.H. Wolberg. Breast cancer diagnosis and prognosis via linear programming. Operations Research, 43(4), pages 570-577, July-August 1995.")
 st.write("Dataset License: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)")
 st.write('Disclaimer: This is for educational purposes only. Consult a doctor for medical advice.')
 
