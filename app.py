@@ -17,7 +17,6 @@ st.markdown('''
 # Breast Cancer Detector
 This app detects if you have Breast Cancer based on Machine Learning!
 - App built by Abdul Haq of Team Skillocity.
-- Note: User inputs are taken from the sidebar. It is located at the top left of the page (arrow symbol). The values of the parameters can be changed from the sidebar.
 ''')
 st.write('---')
 
@@ -35,16 +34,12 @@ df.columns = df.columns.str.strip() #Removes any whitespace around column names,
 X = df.drop('Outcome', axis=1)  #  'Outcome' is the target now!
 y = df['Outcome']
 
-# Encode target variable
-label_encoder = preprocessing.LabelEncoder()
-y_encoded = label_encoder.fit_transform(y)
-
 # Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Model Training
 model = RandomForestClassifier(random_state=42)
-model.fit(X_train, X_train)  # Train the data in
+model.fit(X_train, y_train)
 
 # User Input Form
 def user_input_features():
@@ -80,10 +75,9 @@ input_df = user_input_features()
 
 # Prediction
 prediction = model.predict(input_df)
-predicted_diagnosis = label_encoder.inverse_transform(prediction)[0] # Decode prediction
 
 st.subheader('Prediction:')
-if predicted_diagnosis == 0:
+if prediction[0] == 0:
     st.write('Benign (Non-Cancerous)')
 else:
     st.write('Malignant (Cancerous)')
@@ -109,6 +103,3 @@ st.pyplot(plt) # display plot in streamlit
 # Footer
 st.write('App built by Abdul Haq.')
 st.write('Disclaimer: This is for educational purposes only. Consult a doctor for medical advice.')
-
-#Remove this since the link is not working
-#st.sidebar.subheader("An article about this app: https://proskillocity.blogspot.com/2021/06/breast-cancer-detection-web-app.html")
